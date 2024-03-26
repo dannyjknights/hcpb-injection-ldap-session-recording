@@ -65,6 +65,24 @@ variable "boundary_vault_token" {
   type = string
 }
 
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket"
+  type        = string
+  default     = "boundary-s3-bucket"
+}
+
+variable "s3_bucket_name_tags" {
+  type        = string
+  description = "Name tag to associate to the S3 Bucket"
+  default     = "Session-Recording"
+}
+
+variable "s3_bucket_env_tags" {
+  type        = string
+  description = "Environment tag to associate to the S3 Bucket"
+  default     = "Boundary"
+}
+
 variable "instances" {
   default = [
     "boundary-1-dev",
